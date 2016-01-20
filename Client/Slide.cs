@@ -11,11 +11,11 @@ namespace Client
     {
         public Slide(int time, Content cont)
         {
-            this.AppearanceDuration = time;
+            this.AppearanceTime = time;
             this.Content = cont;
         }
 
-        public int AppearanceDuration { get; set; }
+        public int AppearanceTime { get; set; }
 
         public Content Content { get; set; }
 

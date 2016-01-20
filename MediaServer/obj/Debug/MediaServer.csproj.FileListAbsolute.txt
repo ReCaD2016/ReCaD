@@ -17,3 +17,6 @@
 Z:\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\bin\Debug\ReCaDMediaServer.exe.config
 Z:\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.exe
 Z:\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.pdb
+\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\bin\Debug\ReCaDMediaServer.exe.config
+\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.exe
+\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.pdb

@@ -31,14 +31,6 @@
                     return this.client.Remote.ToString();
                 }
             }
-
-            public string Window
-            {
-                get
-                {
-                    return this.client.WindowHandle.ToString();
-                }
-            }
         }
 
         private class MessageVm

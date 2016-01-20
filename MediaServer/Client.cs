@@ -25,12 +25,9 @@
             this.BeginReadStream();
         }
 
-        public WindowCapture Capture
-        {
-            get; private set;
-        }
+        public event EventHandler Disconnected;
 
-        public IntPtr WindowHandle
+        public WindowCapture Capture
         {
             get; private set;
         }
@@ -47,6 +44,8 @@
 
         public void StopSending()
         {
+            this.Disconnected?.Invoke(this, EventArgs.Empty);
+
             if (this.netStream != null)
             {
                 try
@@ -140,7 +139,6 @@
                 if (handle != IntPtr.Zero)
                 {
                     this.Capture = WindowCapture.FromHandle(handle);
-                    this.WindowHandle = handle;
                     this.StartCapture();
                     break;
                 }

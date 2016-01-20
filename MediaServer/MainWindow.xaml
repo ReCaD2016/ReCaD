@@ -40,8 +40,6 @@
                         <GridView>
                             <GridViewColumn Width="140" Header="Endpoint"
                                 DisplayMemberBinding="{Binding Name}"  />
-                            <GridViewColumn Width="100" Header="Window"
-                                DisplayMemberBinding="{Binding Window}"  />
                         </GridView>
                     </ListView.View>
                 </ListView>

@@ -14,6 +14,9 @@ using Windows.ApplicationModel.Background;
 
 namespace Client
 {
+    /// <summary>
+    /// Hure agnezzz
+    /// </summary>
     class AgentConnection
     {
         public event EventHandler<DataReceivedEventArgs> OnDataReceived;

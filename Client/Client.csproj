@@ -102,6 +102,7 @@
     <Compile Include="Content.cs" />
     <Compile Include="DataReceivedEventArgs.cs" />
     <Compile Include="AgentConnection.cs" />
+    <Compile Include="FileParser.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

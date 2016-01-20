@@ -11,6 +11,7 @@ using Windows.Graphics.Imaging;
 using Windows.Media.Playback;
 using Windows.Networking.Connectivity;
 using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -41,6 +42,7 @@ namespace Client
 
         public MainPage()
         {
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
             this.InitializeComponent();
             this.agentConnection.OnDataReceived += Agent_OnDataReceived;
             this.agentConnection.OnSlideEnded += AgentConnection_OnSlideEnded;

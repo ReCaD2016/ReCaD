@@ -37,11 +37,6 @@
             get; private set;
         }
 
-        private void LogException(Exception ex)
-        {
-            this.owner.LogMessage(ex.Message + " (" + this.Remote + ")");
-        }
-
         public void StopSending()
         {
             this.Disconnected?.Invoke(this, EventArgs.Empty);
@@ -77,7 +72,7 @@
             {
                 try
                 {
-                    this.owner.LogMessage("Stopping capture" + " (" + this.Remote + ")");
+                    this.LogMessage("Stopping capture");
                     this.captureThread.Abort();
                     this.captureThread = null;
                 }
@@ -102,6 +97,16 @@
                     this.LogException(ex);
                 }
             }
+        }
+
+        private void LogMessage(string msg)
+        {
+            this.owner.LogMessage("[" + this.Remote + "] " + msg);
+        }
+
+        private void LogException(Exception ex)
+        {
+            this.LogMessage(ex.Message);
         }
 
         private void UpdateCaptureBuffer()
@@ -153,7 +158,7 @@
             }
             else
             {
-                this.owner.LogMessage("Received: " + message + " (" + this.Remote + ")");
+                this.LogMessage("Received: " + message);
                 this.StartCaptureProcess(message);
             }
         }

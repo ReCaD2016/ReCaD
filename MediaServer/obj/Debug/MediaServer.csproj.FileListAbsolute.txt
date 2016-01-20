@@ -17,22 +17,21 @@
 Z:\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\bin\Debug\ReCaDMediaServer.exe.config
 Z:\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.exe
 Z:\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.pdb
-\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\bin\Debug\ReCaDMediaServer.exe.config
-\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.exe
-\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.pdb
 C:\Users\Michael\Google Drive\FH\Semester 3\Projektwochen 2\ReCaD-2.0\MediaServer\bin\Debug\ReCaDMediaServer.exe.config
 C:\Users\Michael\Google Drive\FH\Semester 3\Projektwochen 2\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.exe
 C:\Users\Michael\Google Drive\FH\Semester 3\Projektwochen 2\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.pdb
-\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\bin\Debug\ReCaDMediaServer.exe
-\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\bin\Debug\ReCaDMediaServer.pdb
+\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\bin\Debug\MediaServer.exe.config
+\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\bin\Debug\MediaServer.exe
+\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\bin\Debug\MediaServer.pdb
 \\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\bin\Debug\ScreenCapCore.dll
 \\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\bin\Debug\ScreenCapCore.pdb
-\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\MediaServer.csprojResolveAssemblyReference.cache
 \\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\MainWindow.g.cs
 \\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\App.g.cs
-\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer_MarkupCompile.cache
-\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer_MarkupCompile.lref
+\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\MediaServer_MarkupCompile.cache
+\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\MediaServer_MarkupCompile.lref
 \\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\MainWindow.baml
-\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.g.resources
+\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\MediaServer.g.resources
 \\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaD.MediaServer.Properties.Resources.resources
 \\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\MediaServer.csproj.GenerateResource.Cache
+\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\MediaServer.exe
+\\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\MediaServer.pdb

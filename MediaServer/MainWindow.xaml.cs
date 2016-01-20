@@ -17,18 +17,19 @@
     {
         private class ClientVm
         {
-            private Client client;
-
             public ClientVm(Client client)
             {
-                this.client = client;
+                this.Client = client;
             }
+
+            public Client Client
+            { get; private set; }
 
             public string Name
             {
                 get
                 {
-                    return this.client.Remote.ToString();
+                    return this.Client.Remote.ToString();
                 }
             }
         }
@@ -288,6 +289,7 @@
                 {
                     var tcpClient = this.listener.EndAcceptTcpClient(ar);
                     var client = new Client(this, tcpClient);
+                    client.Disconnected += this.Client_Disconnected;
                     this.AddClient(client);
                     this.LogMessage("Client connected: " + client.Remote);
                     this.AcceptClients();
@@ -297,6 +299,23 @@
                     this.LogMessage(ex.Message);
                 }
             }
+        }
+
+        private void Client_Disconnected(object sender, EventArgs e)
+        {
+            this.Dispatcher.Invoke(() => 
+            {
+                var client = (Client)sender;
+                this.clients.Remove(client);
+                foreach (var item in this.vm.Clients)
+                {
+                    if (item.Client == client)
+                    {
+                        this.vm.Clients.Remove(item);
+                        break;
+                    }
+                }
+            });
         }
 
         private void AcceptClients()

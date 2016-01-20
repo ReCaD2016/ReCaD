@@ -31,6 +31,14 @@
                     return this.client.Remote.ToString();
                 }
             }
+
+            public string Window
+            {
+                get
+                {
+                    return this.client.WindowHandle.ToString();
+                }
+            }
         }
 
         private class MessageVm
@@ -60,6 +68,7 @@
         private class Vm
         {
             private MainWindow window;
+
             public Vm(MainWindow wnd)
             {
                 this.window = wnd;
@@ -97,7 +106,12 @@
 
         public void LogMessage(string msg)
         {
-            this.vm.Messages.Add(new MessageVm(msg));
+            this.Dispatcher.Invoke(() => 
+            {
+                this.vm.Messages.Add(new MessageVm(msg));
+                //this.msgList.SelectedIndex = this.msgList.Items.Count - 1;
+                this.msgList.ScrollIntoView(this.msgList.Items[this.msgList.Items.Count - 1]);
+            });
         }
 
         private void SetActiveClient(Client c)
@@ -118,26 +132,41 @@
         private void AddClient(Client client)
         {
             this.clients.Add(client);
-            this.vm.Clients.Add(new ClientVm(client));
+            this.Dispatcher.Invoke(() =>
+            {
+                this.vm.Clients.Add(new ClientVm(client));
+            });
         }
 
         private void PreviewHandler(object args)
         {
             var client = (Client)args;
-            this.Dispatcher.Invoke(() =>
+            var capture = client.Capture;
+            while (true)
             {
                 try
                 {
-                    var capture = client.Capture;
-                    this.canvas.Source = BitmapSourceFromHandle(capture.CaptureBitmapHandle());
-                    GC.Collect();
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        try
+                        {
+                            this.canvas.Source = BitmapSourceFromHandle(capture.CaptureBitmapHandle());
+                        }
+                        catch (Exception ex)
+                        {
+                            client.StopCapturing();
+                            this.LogMessage(ex.Message);
+                        }
+                    });
                 }
                 catch (Exception ex)
                 {
                     client.StopCapturing();
-                    MessageBox.Show(ex.Message);
+                    this.LogMessage(ex.Message);
                 }
-            });
+
+                Thread.Sleep(250);
+            }
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -240,12 +269,13 @@
             {
                 try
                 {
+                    this.LogMessage("Stopping server");
                     this.listener.Stop();
                     this.listener = null;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    this.LogMessage(ex.Message);
                 }
            }
 
@@ -258,29 +288,34 @@
             this.clients.Clear();
         }
 
+        private void AcceptClientHandler(IAsyncResult ar)
+        {
+            if (this.listener != null)
+            {
+                try
+                {
+                    var tcpClient = this.listener.EndAcceptTcpClient(ar);
+                    var client = new Client(this, tcpClient);
+                    this.AddClient(client);
+                    this.LogMessage("Client connected: " + client.Remote);
+                    this.AcceptClients();
+                }
+                catch (Exception ex)
+                {
+                    this.LogMessage(ex.Message);
+                }
+            }
+        }
+
         private void AcceptClients()
         {
             try
             {
-                this.listener = new TcpListener(IPAddress.Any, TcpClientReceivePort);
-                this.listener.Start();
-                this.listener.BeginAcceptTcpClient((IAsyncResult ar)=> 
-                {
-                    try
-                    {
-                        var tcpClient = listener.EndAcceptTcpClient(ar);
-                        var client = new Client(this, tcpClient);
-                        this.AddClient(client);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }, null);
+                this.listener.BeginAcceptTcpClient(this.AcceptClientHandler, null);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                this.LogMessage(ex.Message);
             }
         }
 
@@ -289,7 +324,18 @@
             // Start server
 
             this.StopListening();
-            this.AcceptClients();
+            this.LogMessage("Starting server");
+
+            try
+            {
+                this.listener = new TcpListener(IPAddress.Any, TcpClientReceivePort);
+                this.listener.Start();
+                this.AcceptClients();
+            }
+            catch(Exception ex)
+            {
+                this.LogMessage(ex.Message);
+            }
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)

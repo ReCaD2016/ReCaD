@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReCaD.MediaServer"
         mc:Ignorable="d"
-        Title="ReCad Media Server" Height="350" Width="525">
+        Title="ReCaD Media Server" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -17,7 +17,7 @@
                 <Button Content="Stop" Margin="10 0 0 0" Click="Button_Click_5" Width="70"/>
             </StackPanel>
         </StackPanel>
-        <Grid Grid.Row="1" Margin="4 4 4 4">
+        <Grid Grid.Row="1" Margin="4 0 4 4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -38,19 +38,22 @@
                           ItemsSource="{Binding Path=Clients}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Width="140" Header="IP"
+                            <GridViewColumn Width="140" Header="Endpoint"
                                 DisplayMemberBinding="{Binding Name}"  />
+                            <GridViewColumn Width="100" Header="Window"
+                                DisplayMemberBinding="{Binding Window}"  />
                         </GridView>
                     </ListView.View>
                 </ListView>
                 <TextBlock Text="Messages" Grid.Row="2"/>
                 <ListView Grid.Row="3" 
-                          ItemsSource="{Binding Path=Messages}">
+                          ItemsSource="{Binding Path=Messages}"
+                          Name="msgList">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Width="80" Header="Time"
+                            <GridViewColumn Width="60" Header="Time"
                                 DisplayMemberBinding="{Binding Time}"  />
-                            <GridViewColumn Width="150" Header="Message"
+                            <GridViewColumn Width="180" Header="Message"
                                 DisplayMemberBinding="{Binding Text}"  />
                         </GridView>
                     </ListView.View>

@@ -1,17 +1,10 @@
 ﻿namespace ReCaD.MediaServer
 {
-
-
-    // HURE AGNEZTZZZZZZZZZZZZZZZZZZZZZZZZZ
-    //&FDSGfrhg
-    //LOL
-
     using System;
     using System.Diagnostics;
     using System.Net;
     using System.Net.Sockets;
     using System.Threading;
-    using System.Windows;
 
     public class Client
     {
@@ -27,6 +20,7 @@
         {
             this.owner = wnd;
             this.netClient = client;
+            this.Remote = this.netClient.Client.RemoteEndPoint;
             this.netStream = client.GetStream();
             this.BeginReadStream();
         }
@@ -36,12 +30,19 @@
             get; private set;
         }
 
+        public IntPtr WindowHandle
+        {
+            get; private set;
+        }
+
         public EndPoint Remote
         {
-            get
-            {
-                return this.netClient.Client.RemoteEndPoint;
-            }
+            get; private set;
+        }
+
+        private void LogException(Exception ex)
+        {
+            this.owner.LogMessage(ex.Message + " (" + this.Remote + ")");
         }
 
         public void StopSending()
@@ -54,7 +55,7 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    this.LogException(ex);
                 }
             }
 
@@ -66,7 +67,7 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    this.LogException(ex);
                 }
             }
         }
@@ -77,12 +78,13 @@
             {
                 try
                 {
+                    this.owner.LogMessage("Stopping capture" + " (" + this.Remote + ")");
                     this.captureThread.Abort();
                     this.captureThread = null;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    this.LogException(ex);
                 }
             }
         }
@@ -98,7 +100,7 @@
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    this.LogException(ex);
                 }
             }
         }
@@ -138,6 +140,7 @@
                 if (handle != IntPtr.Zero)
                 {
                     this.Capture = WindowCapture.FromHandle(handle);
+                    this.WindowHandle = handle;
                     this.StartCapture();
                     break;
                 }
@@ -146,8 +149,15 @@
 
         private void ReceivedMessage(string message)
         {
-            this.owner.LogMessage("Received: " + message);
-            this.StartCaptureProcess(message);
+            if (message == "::STOP::")
+            {
+                this.StopCapturing();
+            }
+            else
+            {
+                this.owner.LogMessage("Received: " + message + " (" + this.Remote + ")");
+                this.StartCaptureProcess(message);
+            }
         }
 
         private static string ReadString(byte[] data)
@@ -172,12 +182,17 @@
                 {
                     this.netStream.EndRead(ar);
                     var message = ReadString(this.readChunk);
+                    for (int i = 0; i < message.Length; i++)
+                    {
+                        this.readChunk[i] = 0;
+                    }
+
                     this.ReceivedMessage(message);
                     this.BeginReadStream();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    this.LogException(ex);
                 }
             }, null);
         }
@@ -193,7 +208,7 @@
                 catch (Exception ex)
                 {
                     this.StopCapturing();
-                    MessageBox.Show(ex.Message);
+                    this.LogException(ex);
                 }
 
                 try
@@ -207,8 +222,9 @@
                 }
                 catch (Exception ex)
                 {
+                    this.StopCapturing();
                     this.StopSending();
-                    MessageBox.Show(ex.Message);
+                    this.LogException(ex);
                 }
             }
         }

@@ -20,3 +20,6 @@ Z:\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer
 \\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\bin\Debug\ReCaDMediaServer.exe.config
 \\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.exe
 \\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.pdb
+C:\Users\Michael\Google Drive\FH\Semester 3\Projektwochen 2\ReCaD-2.0\MediaServer\bin\Debug\ReCaDMediaServer.exe.config
+C:\Users\Michael\Google Drive\FH\Semester 3\Projektwochen 2\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.exe
+C:\Users\Michael\Google Drive\FH\Semester 3\Projektwochen 2\ReCaD-2.0\MediaServer\obj\Debug\ReCaDMediaServer.pdb

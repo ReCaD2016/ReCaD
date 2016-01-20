@@ -1,0 +1,3 @@
+﻿  WindowCapture.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  ScreenCapCore.vcxproj -> \\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD\Debug\ScreenCapCore.dll
+  ScreenCapCore.vcxproj -> \\tobias\studenten\94632\Documents\GitHubVisualStudio\ReCaD\Debug\ScreenCapCore.pdb (Partial PDB)

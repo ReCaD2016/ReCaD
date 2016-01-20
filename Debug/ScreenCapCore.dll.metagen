@@ -1,0 +1,31 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly ScreenCapCore, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class ReCaD.WindowCapture: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Properties:
+    Int32 Height 'get ' : 
+    Int32 Width 'get ' : 
+  Events:
+    System.EventHandler SizeChanged: SpecialName
+  Methods:
+    FromPoint(Point): PrivateScope, Public, Static, HideBySig
+    FromHandle(IntPtr): PrivateScope, Public, Static, HideBySig
+    add_SizeChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_SizeChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_Width(): PrivateScope, Public, HideBySig, SpecialName
+    get_Height(): PrivateScope, Public, HideBySig, SpecialName
+    CaptureBitmapHandle(): PrivateScope, Public, HideBySig
+    CaptureBitmap(): PrivateScope, Public, HideBySig
+    CaptureIntoBuffer(Byte[]): PrivateScope, Public, HideBySig
+    CaptureIntoBufferNoHeader(Byte[]): PrivateScope, Public, HideBySig
+    GetRequiredByteCount(): PrivateScope, Public, HideBySig
+    GetRequiredByteCountNoHeader(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig

@@ -1,0 +1,28 @@
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\bin\Debug\Configurator.exe.config
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\bin\Debug\Configurator.exe
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\bin\Debug\Configurator.pdb
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\obj\Debug\Configurator.csprojResolveAssemblyReference.cache
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\obj\Debug\MainWindow.g.cs
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\obj\Debug\App.g.cs
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\obj\Debug\Configurator_MarkupCompile.cache
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\obj\Debug\Configurator_MarkupCompile.lref
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\obj\Debug\MainWindow.baml
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\obj\Debug\Configurator.g.resources
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\obj\Debug\Configurator.Properties.Resources.resources
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\obj\Debug\Configurator.csproj.GenerateResource.Cache
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\obj\Debug\Configurator.exe
+C:\Users\Josef\Desktop\IL\Configurator\Configurator\obj\Debug\Configurator.pdb
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\bin\Debug\Configurator.exe.config
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\obj\Debug\Configurator.exe
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\obj\Debug\Configurator.pdb
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\bin\Debug\Configurator.exe
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\bin\Debug\Configurator.pdb
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\obj\Debug\Configurator.csprojResolveAssemblyReference.cache
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\obj\Debug\MainWindow.g.cs
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\obj\Debug\App.g.cs
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\obj\Debug\Configurator_MarkupCompile.cache
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\obj\Debug\Configurator_MarkupCompile.lref
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\obj\Debug\MainWindow.baml
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\obj\Debug\Configurator.g.resources
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\obj\Debug\Configurator.Properties.Resources.resources
+C:\Users\Cerima Koini\Desktop\Configurator\Configurator\obj\Debug\Configurator.csproj.GenerateResource.Cache

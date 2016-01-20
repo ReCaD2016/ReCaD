@@ -1,5 +1,6 @@
 WinMetadata\Windows.winmd
 ApplicationInsights.config
+Assets\Fail.bmp
 Assets\FHlogo.bmp
 Assets\LockScreenLogo.scale-200.png
 Assets\SplashScreen.scale-200.png

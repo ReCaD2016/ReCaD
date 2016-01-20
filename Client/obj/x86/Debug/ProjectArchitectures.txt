@@ -1,1 +1,1 @@
-C:\Users\Josef\Desktop\IL\Client\Client\Client.csproj;x86
+C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\Client.csproj;x86

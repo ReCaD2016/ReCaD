@@ -117,6 +117,7 @@
     <None Include="Client_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Fail.bmp" />
     <Content Include="Assets\FHlogo.bmp" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

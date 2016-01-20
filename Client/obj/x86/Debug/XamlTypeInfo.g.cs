@@ -132,15 +132,17 @@ namespace Client.Client_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
+            _typeNameTable = new string[4];
             _typeNameTable[0] = "Client.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "Object";
 
-            _typeTable = new global::System.Type[3];
+            _typeTable = new global::System.Type[4];
             _typeTable[0] = typeof(global::Client.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::System.Object);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -190,6 +192,7 @@ namespace Client.Client_XamlTypeInfo
             case 0:   //  Client.MainPage
                 userType = new global::Client.Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_MainPage;
+                userType.AddMemberName("Thread");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -201,16 +204,35 @@ namespace Client.Client_XamlTypeInfo
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::Client.Client_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
+
+            case 3:   //  Object
+                xamlType = new global::Client.Client_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
             }
             return xamlType;
         }
 
 
+        private object get_0_MainPage_Thread(object instance)
+        {
+            var that = (global::Client.MainPage)instance;
+            return that.Thread;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::Client.Client_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::Client.Client_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "Client.MainPage.Thread":
+                userType = (global::Client.Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Client.MainPage");
+                xamlMember = new global::Client.Client_XamlTypeInfo.XamlMember(this, "Thread", "Object");
+                xamlMember.Getter = get_0_MainPage_Thread;
+                xamlMember.SetIsReadOnly();
+                break;
+            }
             return xamlMember;
         }
     }

@@ -8,8 +8,9 @@
     mc:Ignorable="d" >
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Image Name="pic" Stretch="Uniform"></Image>
-        <WebView Name="web" Visibility="Collapsed"></WebView>
+        <Image x:ConnectionId='1' Name="pic" Stretch="Uniform"></Image>
+        <WebView x:ConnectionId='2' Name="web" Visibility="Collapsed"></WebView>
     </Grid>
 </Page>
     
+

@@ -9,16 +9,16 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>f4bb3333-eb93-47c6-9ed1-a94584eb0ea1</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Josef\Desktop\IL\Client\Client\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\obj\x86\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Josef\Desktop\IL\Client\Client\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\bin\x86\Debug\Client.exe">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\bin\x86\Debug\Client.exe">
       <PackagePath>entrypoint\Client.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Josef\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
@@ -339,52 +339,52 @@
     <AppxPackagedFile Include="C:\Users\Josef\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\ApplicationInsights.config">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\Assets\FHlogo.bmp">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\Assets\FHlogo.bmp">
       <PackagePath>Assets\FHlogo.bmp</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\bin\x86\Debug\Client.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\bin\x86\Debug\Client.xr.xml">
       <PackagePath>Client.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Josef\Desktop\IL\Client\Client\bin\x86\Debug\Core\Client.exe">
+    <AppxPackagedFile Include="C:\Users\Josef\Source\Repos\ReCaD-2.0\Client\bin\x86\Debug\Core\Client.exe">
       <PackagePath>Client.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

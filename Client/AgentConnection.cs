@@ -11,21 +11,21 @@ using Windows.Storage.Streams;
 using Windows.Networking.Connectivity;
 using Windows.Networking;
 using Windows.ApplicationModel.Background;
+using System.Diagnostics;
 
 namespace Client
 {
-    /// <summary>
-    /// Hure agnezzz
-    /// </summary>
     class AgentConnection
     {
         public event EventHandler<DataReceivedEventArgs> OnDataReceived;
 
         public event EventHandler OnSlideEnded;
 
+        public event EventHandler OnConnectionFailed;
+
         public async void ConnectTo(Slide slide)
         {
-            var duration = slide.AppearanceTime;
+            var duration = slide.AppearanceDuration;
             var content = slide.Content as ScreenCapture;
             var ipAddress = content.IPTargetAgent;
             HostName localHost = null;
@@ -42,14 +42,19 @@ namespace Client
             var TCPClient = new StreamSocket();
             try
             {
-                await TCPClient.ConnectAsync(
+                var cts = new CancellationTokenSource();
+                cts.CancelAfter(500);
+                var connectAsync = TCPClient.ConnectAsync(
                     new Windows.Networking.EndpointPair(localHost, "54321", new Windows.Networking.HostName(ipAddress), "54321"));
+                var connectTask = connectAsync.AsTask(cts.Token);
+                await connectTask;
                 this.SendToAgent(slide, TCPClient);
             }
             catch(Exception ex)
             {
                 TCPClient.Dispose();
-                await new Windows.UI.Popups.MessageDialog(ex.Message).ShowAsync();
+                Debug.WriteLine(ex.Message);
+                this.FireOnConnectionFailed();
                 return;
             }
         }
@@ -61,13 +66,20 @@ namespace Client
             var reader = new DataReader(TCPClient.InputStream);
             Timer timer = new Timer(async (client) =>
             {
-                var tcpClient = client as StreamSocket;
-                var writerCB = new DataWriter(tcpClient.OutputStream);
-                writerCB.WriteString("::STOP::");
-                await writerCB.StoreAsync();
-                await writerCB.FlushAsync();
-                tcpClient.Dispose();
-            }, TCPClient, slide.AppearanceTime, Timeout.Infinite);
+                try
+                {
+                    var tcpClient = client as StreamSocket;
+                    var writerCB = new DataWriter(tcpClient.OutputStream);
+                    writerCB.WriteString("::STOP::");
+                    await writerCB.StoreAsync();
+                    await writerCB.FlushAsync();
+                    tcpClient.Dispose();
+                }
+                catch(Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            }, TCPClient, slide.AppearanceDuration, Timeout.Infinite);
             try
             {
                 var length = writer.WriteString(content.ProcessName);
@@ -113,19 +125,20 @@ namespace Client
                 }
                 catch (Exception ex)
                 {
-                    await new Windows.UI.Popups.MessageDialog(ex.Message).ShowAsync();
+                    Debug.WriteLine(ex.Message);
                 }
             }
             catch(Exception ex)
             {
-                await new Windows.UI.Popups.MessageDialog(ex.Message).ShowAsync();
+                Debug.WriteLine(ex.Message);
+                this.FireOnConnectionFailed();
             }
         }
 
         private string SlideToStringParse(Slide slide)
         {
             var msg = "Command:";
-            var duration = slide.AppearanceTime;
+            var duration = slide.AppearanceDuration;
             var content = slide.Content;
             
             if(content is ScreenCapture)
@@ -149,6 +162,14 @@ namespace Client
             if(this.OnSlideEnded != null)
             {
                 this.OnSlideEnded(this, null);
+            }
+        }
+
+        private void FireOnConnectionFailed()
+        {
+            if(this.OnConnectionFailed != null)
+            {
+                this.OnConnectionFailed(this, null);
             }
         }
     }
